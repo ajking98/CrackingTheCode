@@ -15,4 +15,11 @@ public class UrlifyTests {
         Assert.assertEquals(30, result.length());
         Assert.assertEquals("%20%20%20%20%20%20%20%20%20%20", result);
     }
+
+    @Test
+    public void testUnaffected() {
+        String result = Urlify.urlify("NoSpaces", 8);
+        Assert.assertEquals(8, result.length());
+        Assert.assertEquals("NoSpaces", result);
+    }
 }
